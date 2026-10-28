@@ -1,0 +1,21 @@
+name: ci
+
+# YOUR CODE (gap 1): run this workflow on pull requests that change anything under labs/week10-testing-ci/
+# (use `on:` with `pull_request:` and a `paths:` list), and also on `push` with the same paths.
+on:
+  pull_request:
+    paths:
+      - "labs/week10-testing-ci/**"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: labs/week10-testing-ci
+    steps:
+      - uses: actions/checkout@v4
+      # YOUR CODE (gap 2): set up Python 3.12 with actions/setup-python@v5
+      #   (add `cache: pip` and `cache-dependency-path: labs/week10-testing-ci/requirements.txt`)
+      # YOUR CODE (gap 3): install the requirements (pip install -r requirements.txt)
+      # YOUR CODE (gap 4): run the tests (pytest -q)
